@@ -12,7 +12,12 @@
   },
   "keywords": [
     "behave",
-    "behavejs"
+    "behavejs",
+    "immutable",
+    "model",
+    "store",
+    "data",
+    "state"
   ],
   "author": "kurtiskemple@gmail.com",
   "license": "GPL",
