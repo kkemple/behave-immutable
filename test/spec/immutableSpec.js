@@ -87,7 +87,7 @@ describe('BehaveImmutable', () => {
         });
     });
 
-    describe('.pop()', () => {
+    describe('.shift()', () => {
         it('should be defined', done => {
             expect(this.bi.shift).toBeDefined();
             done();

@@ -3,7 +3,7 @@ An immutable data store that keeps state history
 
 In most cases when you want to update a model/store, you will also want access to it's previous states, in a lot of frameworks this is something you have to design on your own even though this is how a model should behave.
 
-`BehaveImmutable` depends on Facebook's [Immutable](http://facebook.github.io/immutable-js/) library under the hood, when you pull state from the stack it will return you an instance of Immutable.
+`behave-immutable` depends on Facebook's [Immutable](http://facebook.github.io/immutable-js/) library under the hood, when you pull state from the stack it will return you an instance of Immutable.
 
 ### Install
 
@@ -39,7 +39,11 @@ immutable.serialize(); // => "state=[some=value]"
 immutable.serialize({ encode: true }); // => "state=%5Bsome%3Dstate%5D"
 ```
 
+### Testing
+To run the tests for `behave-immutable` simply run `npm test`
+
 ### Release History
 
 - 0.1.0 Initial release
 - 0.1.1 Fixed improper encoding on serialize
+- 0.1.2 Added test instructions to readme
