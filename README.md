@@ -3,7 +3,7 @@ An immutable data store that keeps state history
 
 In most cases when you want to update a model/store, you will also want access to it's previous states, in a lot of frameworks this is something you have to design on your own even though this is how a model should behave.
 
-BehaveImmutable depends on Facebook's [Immutable](http://facebook.github.io/immutable-js/) library under the hood, when you pull state from the stack it will return you an instance of Immutable.
+`BehaveImmutable` depends on Facebook's [Immutable](http://facebook.github.io/immutable-js/) library under the hood, when you pull state from the stack it will return you an instance of Immutable.
 
 ### Install
 
