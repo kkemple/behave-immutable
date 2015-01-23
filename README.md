@@ -35,9 +35,11 @@ immutable.toJS(); // => { state: { some: 'value' } }
 
 immutable.toJSON(); // => { "state": { "some": "value" } }
 
-immutable.serialize(); => "state=[some=value]"
+immutable.serialize(); // => "state=[some=value]"
+immutable.serialize({ encode: true }); // => "state=%5Bsome%3Dstate%5D"
 ```
 
 ### Release History
 
 - 0.1.0 Initial release
+- 0.1.1 Fixed improper encoding on serialize

@@ -77,7 +77,7 @@ var serialize = function (state, urlEncode) {
     if (!state.hasOwnProperty(prop)) continue;
 
     if (isObject(state[prop])) {
-      props.push(prop + "=[" + serialize(state[prop], urlEncode) + "]");
+      props.push(prop + "=" + (urlEncode ? encode("[" + serialize(state[prop], urlEncode) + "]") : "[" + serialize(state[prop], urlEncode) + "]"));
     } else {
       props.push(prop + "=" + (urlEncode ? encode(state[prop]) : state[prop]));
     }
