@@ -48,4 +48,5 @@ To run the tests for `behave-immutable` simply run `npm test`
 - 0.1.1 Fixed improper encoding on serialize
 - 0.1.2 Added test instructions to readme
 - 0.1.3 Minor refactoring
+- 0.1.4 Fixed incorrect main file in package.json
 
