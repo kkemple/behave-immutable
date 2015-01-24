@@ -143,9 +143,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     pop: {
       value: function pop() {
-        var state;
-
-        state = statesLookup(this._id).pop();
+        var state = statesLookup(this._id).pop();
         if (state) return state;
       },
       writable: true,
@@ -154,9 +152,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     shift: {
       value: function shift() {
-        var state;
-
-        state = statesLookup(this._id).shift();
+        var state = statesLookup(this._id).shift();
         if (state) return state;
       },
       writable: true,
@@ -165,9 +161,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     at: {
       value: function at(idx) {
-        var state;
-
-        state = statesLookup(this._id)[idx];
+        var state = statesLookup(this._id)[idx];
         if (state) return state;
       },
       writable: true,
@@ -176,9 +170,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     range: {
       value: function range(sIdx, eIdx) {
-        var states;
-
-        states = statesLookup(this._id).slice(sIdx, eIdx + 1);
+        var states = statesLookup(this._id).slice(sIdx, eIdx + 1);
         if (states.length) return states;
       },
       writable: true,
@@ -203,10 +195,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     toJS: {
       value: function toJS() {
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return currentState.toJS();
       },
       writable: true,
@@ -215,10 +204,7 @@ var BehaveImmutable = (function (EventEmitter) {
     },
     toJSON: {
       value: function toJSON() {
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return JSON.stringify(currentState);
       },
       writable: true,
@@ -238,10 +224,7 @@ var BehaveImmutable = (function (EventEmitter) {
         return _serializeWrapper;
       })(function () {
         var opts = arguments[0] === undefined ? {} : arguments[0];
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return serialize(currentState.toJS(), opts.encode);
       }),
       writable: true,

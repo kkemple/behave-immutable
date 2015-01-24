@@ -86,30 +86,22 @@ class BehaveImmutable extends EventEmitter {
     }
 
     pop() {
-        var state;
-
-        state = statesLookup(this._id).pop();
+        var state = statesLookup(this._id).pop();
         if (state) return state;
     }
 
     shift() {
-        var state;
-
-        state = statesLookup(this._id).shift();
+        var state = statesLookup(this._id).shift();
         if (state) return state;
     }
 
     at(idx) {
-        var state;
-
-        state = statesLookup(this._id)[idx];
+        var state = statesLookup(this._id)[idx];
         if (state) return state;
     }
 
     range(sIdx, eIdx) {
-        var states;
-
-        states = statesLookup(this._id).slice(sIdx, eIdx + 1);
+        var states = statesLookup(this._id).slice(sIdx, eIdx + 1);
         if (states.length) return states;
     }
 
@@ -122,26 +114,17 @@ class BehaveImmutable extends EventEmitter {
     }
 
     toJS() {
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return currentState.toJS();
     }
 
     toJSON() {
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return JSON.stringify(currentState);
     }
 
     serialize(opts={}) {
-        var states, currentState;
-
-        states = statesLookup(this._id);
-        currentState = states[states.length - 1];
+        var currentState = this.get();
         if (currentState) return serialize(currentState.toJS(), opts.encode);
     }
 }
