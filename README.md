@@ -17,7 +17,7 @@ npm install --save behave-immutable
 
 ```js
 
-const immutable = new BehaveImmutable({ state: { some: 'value' } });
+const immutable = new BehaveImmutable({ some: 'value' });
 
 // setting state
 immutable.set({ another: 'value' });
@@ -50,12 +50,11 @@ let range = immutable.range(start, end); // => array of states in range (includi
 immutable.purge(); // => empties the stack
 
 // sugar methods to transform latest state
-immutable.toJS(); // => { state: { some: 'value' } }
+immutable.toJS(); // => { some: 'value', another: 'value' }
 
-immutable.toJSON(); // => { "state": { "some": "value" } }
+immutable.toJSON(); // => { "some": "value", "another": "value" }
 
-immutable.serialize(); // => "state=[some=value]"
-immutable.serialize({ encode: true }); // => "state=%5Bsome%3Dstate%5D"
+immutable.serialize(); // => "some=value&another=value"
 ```
 
 ### Testing
@@ -70,4 +69,5 @@ To run the tests for `behave-immutable` simply run `npm test`
 - 0.1.4 Fixed incorrect main file in package.json
 - 0.1.5 Added build badge
 - 0.1.6 More descriptive examples in readme
+- 0.1.7 Fixed errors in examples
 
