@@ -17,6 +17,7 @@ npm install --save behave-immutable
 
 ```js
 
+// anything passed to constructor will be set as first state
 const immutable = new BehaveImmutable({ some: 'value' });
 
 // setting state
@@ -70,4 +71,5 @@ To run the tests for `behave-immutable` simply run `npm test`
 - 0.1.5 Added build badge
 - 0.1.6 More descriptive examples in readme
 - 0.1.7 Fixed errors in examples
+- 0.1.8 Fixed error when setting initial state
 

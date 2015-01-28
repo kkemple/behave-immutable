@@ -44,12 +44,12 @@ var serialize = (state, urlEncode) => {
 };
 
 class BehaveImmutable extends EventEmitter {
-    constructor(opts={}) {
+    constructor(state) {
         super();
 
         this._id = 'bi-' + guid();
-        if (opts.state) {
-            this.set(opts.state);
+        if (state) {
+            this.set(state);
         }
     }
 
