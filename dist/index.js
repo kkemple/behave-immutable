@@ -87,13 +87,12 @@ var serialize = function (state, urlEncode) {
 };
 
 var BehaveImmutable = (function (EventEmitter) {
-  function BehaveImmutable() {
-    var opts = arguments[0] === undefined ? {} : arguments[0];
+  function BehaveImmutable(state) {
     _get(Object.getPrototypeOf(BehaveImmutable.prototype), "constructor", this).call(this);
 
     this._id = "bi-" + guid();
-    if (opts.state) {
-      this.set(opts.state);
+    if (state) {
+      this.set(state);
     }
   }
 

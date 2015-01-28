@@ -6,3 +6,4 @@ test/common
 src/dev.js
 dev
 index.html
+*.DS_Store

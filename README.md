@@ -72,4 +72,5 @@ To run the tests for `behave-immutable` simply run `npm test`
 - 0.1.6 More descriptive examples in readme
 - 0.1.7 Fixed errors in examples
 - 0.1.8 Fixed error when setting initial state
+- 0.1.9 Updated build to latest code
 
